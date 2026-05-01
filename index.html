@@ -1,471 +1,709 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoinCarrière — Recrutement Hôtellerie & Restauration au Maroc</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1527595958901698');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    <style>
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{--blue:#0077B6;--blue-dark:#005f8f;--blue-deeper:#004a70;--lime:#b4dc02;--lime-hover:#a2c700;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--gray-700:#334155;--gray-800:#1e293b;--gray-900:#0f172a}
-        html{scroll-behavior:smooth}
-        body{font-family:'Inter',sans-serif;color:var(--gray-800);line-height:1.6;background:#fff;overflow-x:hidden}
-        img{max-width:100%;height:auto;display:block}
-        a{text-decoration:none;color:inherit}
-        .container{width:100%;max-width:1140px;margin:0 auto;padding:0 20px}
-        
-        /* CTA responsive styles */
-        .cta-button{
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            gap:8px;
-            background:var(--lime);
-            color:var(--gray-900);
-            font-weight:700;
-            font-size:1.125rem;
-            padding:18px 40px;
-            border-radius:12px;
-            border:none;
-            cursor:pointer;
-            transition:all .25s ease;
-            box-shadow:0 4px 15px rgba(180,220,2,.35);
-            white-space:nowrap;
-            text-align:center;
-            max-width:100%;
-        }
-        .cta-button:hover{
-            background:var(--lime-hover);
-            transform:translateY(-2px);
-            box-shadow:0 8px 25px rgba(180,220,2,.45);
-        }
-        .cta-button svg{flex-shrink:0}
-        
-        @media(max-width: 640px) {
-            .cta-button {
-                width: 100%;
-                font-size: 1rem;
-                padding: 16px 20px;
-                white-space: normal;
-                line-height: 1.3;
-            }
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoinCarrière — Recrutement Hôtellerie & Restauration au Maroc</title>
 
-        .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 0;transition:all .3s ease;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.06)}
-        .header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
-        .header-inner{display:flex;align-items:center;justify-content:space-between}
-        .header-logo img{height:40px;width:auto}
-        .header-login{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:600;font-size:.95rem;padding:10px 22px;border-radius:10px;border:none;transition:all .25s ease}
-        .header-login:hover{background:var(--blue-dark);transform:translateY(-1px)}
-        .header-login svg{width:18px;height:18px}
-        .hero{position:relative;color:#fff;min-height:100vh;overflow:hidden;display:flex;align-items:center;background:var(--blue-deeper)}
-        .hero-slideshow{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
-        .hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1.5s ease-in-out}
-        .hero-slide.active{opacity:1}
-        .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
-        .hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(0,40,70,.88),rgba(0,60,100,.80) 40%,rgba(0,100,160,.70) 70%,rgba(0,119,182,.60));z-index:1}
-        .hero-content{position:relative;z-index:2;max-width:700px;padding:140px 0 80px}
-        .hero-text{text-align:center}
-        .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:8px 16px;border-radius:50px;font-size:.85rem;font-weight:500;margin-bottom:24px;border:1px solid rgba(255,255,255,.15)}
-        .hero h1{font-size:2.25rem;font-weight:900;line-height:1.15;margin-bottom:20px;letter-spacing:-.02em}
-        .hero h1 .highlight{color:var(--lime)}
-        .hero-subtitle{font-size:1.1rem;color:rgba(255,255,255,.88);margin-bottom:32px;max-width:540px;margin:0 auto;line-height:1.7}
-        .hero-cta{margin-bottom:16px}
-        .hero-reassurance{display:flex;align-items:center;justify-content:center;gap:6px;font-size:.85rem;color:rgba(255,255,255,.65)}
-        .hero-dots{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
-        .hero-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.3);border:2px solid rgba(255,255,255,.5);cursor:pointer;transition:all .3s ease}
-        .hero-dot.active{background:var(--lime);border-color:var(--lime);box-shadow:0 0 12px rgba(180,220,2,.5)}
-        .hero-progress{position:absolute;bottom:0;left:0;height:3px;background:var(--lime);z-index:3}
-        .social-proof{background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:32px 0;overflow:hidden}
-        .social-proof-inner{text-align:center}
-        .logos-track-wrapper{position:relative;overflow:hidden;margin-bottom:20px;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-        .logos-track{display:flex;gap:28px;animation:scrollLogos 35s linear infinite;width:max-content}
-        @keyframes scrollLogos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-        .logo-item{display:flex;align-items:center;justify-content:center;padding:10px 18px;background:#fff;border:1px solid var(--gray-200);border-radius:10px;height:60px;min-width:130px;flex-shrink:0;transition:all .3s ease}
-        .logo-item:hover{border-color:var(--blue);transform:translateY(-2px)}
-        .hotel-logo{display:flex;flex-direction:column;align-items:center;line-height:1.1}
-        .hotel-logo .logo-name{font-weight:800;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-700)}
-        .hotel-logo .logo-sub{font-weight:500;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin-top:2px}
-        .hotel-logo .logo-icon{font-size:1rem;margin-bottom:2px}
-        .social-proof-text{font-size:1rem;color:var(--gray-600);font-weight:500}
-        .social-proof-text strong{color:var(--blue);font-weight:700}
-        .steps{padding:80px 0;background:#fff}
-        .section-header{text-align:center;margin-bottom:56px}
-        .section-label{display:inline-block;background:rgba(0,119,182,.08);color:var(--blue);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:16px}
-        .section-title{font-size:2rem;font-weight:800;color:var(--gray-900);line-height:1.2;margin-bottom:12px}
-        .section-subtitle{font-size:1.05rem;color:var(--gray-500);max-width:520px;margin:0 auto}
-        .steps-container{position:relative}
-        .timeline-line{display:none}
-        .steps-row{display:grid;grid-template-columns:1fr;gap:24px;position:relative}
-        .step-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:16px;padding:32px 24px;text-align:center;transition:all .3s ease}
-        .step-card:hover{border-color:var(--blue);box-shadow:0 8px 30px rgba(0,119,182,.1);transform:translateY(-4px)}
-        .step-number{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--blue);color:#fff;font-weight:800;font-size:1.2rem;border-radius:14px;margin-bottom:20px}
-        .step-icon{width:56px;height:56px;margin:0 auto 16px;color:var(--blue)}
-        .step-card h3{font-size:1.15rem;font-weight:700;color:var(--gray-900);margin-bottom:8px}
-        .step-card p{font-size:.95rem;color:var(--gray-500);line-height:1.6}
-        .step-arrow{display:flex;justify-content:center;color:var(--gray-300)}
-        .advantages{padding:80px 0;background:linear-gradient(180deg,var(--gray-50),#fff)}
-        .advantages-grid{display:grid;grid-template-columns:1fr;gap:20px}
-        .advantage-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;padding:28px 24px;display:flex;align-items:flex-start;gap:16px;transition:all .3s ease}
-        .advantage-card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,119,182,.08)}
-        .advantage-icon{flex-shrink:0;width:48px;height:48px;background:rgba(0,119,182,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--blue)}
-        .advantage-text h3{font-size:1.05rem;font-weight:700;color:var(--gray-900);margin-bottom:6px}
-        .advantage-text p{font-size:.9rem;color:var(--gray-500);line-height:1.55}
-        .preview-section{padding:80px 0;background:#fff}
-        .preview-wrapper{position:relative;max-width:280px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.12);background:#fff}
-        .preview-wrapper img{width:100%;height:auto;display:block}
-        .stats{padding:60px 0;background:linear-gradient(165deg,var(--blue-deeper),var(--blue));color:#fff}
-        .stats-grid{display:grid;grid-template-columns:1fr;gap:32px;text-align:center}
-        .stat-number{font-size:2.5rem;font-weight:900;color:var(--lime);line-height:1;margin-bottom:8px}
-        .stat-label{font-size:1rem;color:rgba(255,255,255,.8);font-weight:500}
-        .stat-item .stat-sub{display:block;font-size:.85rem;color:rgba(255,255,255,.55);margin-top:4px}
-        .final-cta{padding:80px 0;background:#fff;text-align:center}
-        .final-cta-content{max-width:600px;margin:0 auto}
-        .final-cta h2{font-size:2rem;font-weight:800;color:var(--gray-900);margin-bottom:16px;line-height:1.2}
-        .final-cta p{font-size:1.05rem;color:var(--gray-500);margin-bottom:36px;line-height:1.7}
-        .final-cta .cta-button{font-size:1.2rem;padding:20px 48px}
-        @media(max-width:640px){.final-cta .cta-button{font-size:1.1rem;padding:16px 20px;width:100%}}
-        .final-reassurance{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
-        .reassurance-item{display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--gray-500)}
-        .reassurance-item svg{color:var(--lime)}
-        .footer{background:var(--gray-900);color:var(--gray-400);padding:40px 0 32px;text-align:center}
-        .footer-logo{margin-bottom:16px}
-        .footer-logo img{height:36px;width:auto;margin:0 auto;opacity:.8;transition:opacity .3s}
-        .footer-logo img:hover{opacity:1}
-        .footer-text{font-size:.85rem}
-        @media(min-width:640px){.hero{padding:0}.hero-content{padding:160px 0 100px}.hero h1{font-size:2.75rem}.hero-subtitle{font-size:1.15rem}.steps-row{grid-template-columns:repeat(2,1fr)}.step-arrow{display:none}.advantages-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat-number{font-size:3rem}.header-logo img{height:44px}.logo-item{min-width:150px;height:64px}.preview-wrapper{max-width:320px}}
-        @media(min-width:1024px){.hero-content{padding:180px 0 120px;max-width:750px}.hero-text{text-align:left}.hero h1{font-size:3.5rem}.hero-subtitle{margin-left:0}.hero-cta{text-align:left}.hero-reassurance{justify-content:flex-start}.timeline-line{display:block;position:absolute;top:54px;left:12.5%;right:12.5%;height:3px;background:linear-gradient(90deg,var(--blue),var(--lime),var(--blue));border-radius:2px;z-index:0}.timeline-line::before{content:'';position:absolute;top:-6px;left:0;right:0;height:15px;background:linear-gradient(90deg,rgba(0,119,182,.2),rgba(180,220,2,.2),rgba(0,119,182,.2));border-radius:8px;filter:blur(4px)}.steps-row{grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1}.step-card{background:transparent;border:none;padding:0 12px;text-align:center}.step-card:hover{background:transparent;box-shadow:none;transform:none}.step-number{width:56px;height:56px;font-size:1.3rem;border-radius:50%;margin-bottom:24px;box-shadow:0 4px 15px rgba(0,119,182,.3);position:relative;z-index:2}.step-card:hover .step-number{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,119,182,.4);transition:transform .3s,box-shadow .3s}.step-card:hover .step-icon{transform:translateY(-4px);transition:transform .3s}.step-icon{margin-bottom:12px}.step-card h3{font-size:1.1rem;margin-bottom:8px}.step-arrow{display:none}.advantages-grid{grid-template-columns:repeat(3,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr);gap:40px}.stat-number{font-size:3.5rem}.section-title{font-size:2.25rem}.final-cta h2{font-size:2.5rem}.final-cta .cta-button{font-size:1.25rem;padding:22px 56px}.header-logo img{height:44px}.logos-track{gap:36px}.logo-item{min-width:160px;height:68px;padding:12px 22px}.preview-wrapper{max-width:320px}}
-        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-        .animate-in{opacity:0;transform:translateY(30px)}.animate-in.visible{animation:fadeInUp .6s ease forwards}
-        .delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}
-    </style>
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1527595958901698');
+    fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    /* ── RESET & TOKENS ── */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#0077B6;--blue-dark:#005f8f;--blue-deeper:#004a70;
+      --lime:#b4dc02;--lime-hover:#a2c700;
+      --gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;
+      --gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;
+      --gray-600:#475569;--gray-700:#334155;--gray-800:#1e293b;--gray-900:#0f172a;
+      --radius-sm:8px;--radius-md:12px;--radius-lg:16px;
+      --shadow-md:0 8px 30px rgba(0,119,182,.1);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--gray-800);line-height:1.6;background:#fff;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:100%;max-width:1140px;margin:0 auto;padding:0 20px}
+
+    /* ── CTA BUTTON ── */
+    .cta-button{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      background:var(--lime);color:var(--gray-900);
+      font-weight:700;font-size:1.125rem;
+      padding:18px 40px;border-radius:var(--radius-md);
+      border:none;cursor:pointer;
+      transition:background .25s,transform .25s,box-shadow .25s;
+      box-shadow:0 4px 15px rgba(180,220,2,.35);
+      white-space:nowrap;text-align:center;max-width:100%;
+    }
+    .cta-button:hover{background:var(--lime-hover);transform:translateY(-2px);box-shadow:0 8px 25px rgba(180,220,2,.45)}
+    .cta-button svg{flex-shrink:0}
+
+    /* ── HEADER ── */
+    .header{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      padding:12px 0;
+      background:rgba(255,255,255,.95);backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+      transition:box-shadow .3s;
+    }
+    .header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between}
+    .header-logo img{height:40px;width:auto}
+    .header-login{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--blue);color:#fff;
+      font-weight:600;font-size:.95rem;
+      padding:10px 22px;border-radius:10px;
+      transition:background .25s,transform .25s;
+    }
+    .header-login:hover{background:var(--blue-dark);transform:translateY(-1px)}
+    .header-login svg{width:18px;height:18px}
+
+    /* ── HERO ── */
+    .hero{
+      position:relative;color:#fff;
+      min-height:100vh;overflow:hidden;
+      display:flex;align-items:center;
+      background:var(--blue-deeper);
+    }
+    .hero-slideshow{position:absolute;inset:0;z-index:0}
+    .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.5s ease-in-out}
+    .hero-slide.active{opacity:1}
+    .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .hero-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(0,40,70,.88),rgba(0,60,100,.80) 40%,rgba(0,100,160,.70) 70%,rgba(0,119,182,.60));
+      z-index:1;
+    }
+    .hero-content{position:relative;z-index:2;max-width:700px;padding:140px 0 80px}
+    .hero-text{text-align:center}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+      padding:8px 16px;border-radius:50px;
+      font-size:.85rem;font-weight:500;margin-bottom:24px;
+      border:1px solid rgba(255,255,255,.15);
+    }
+    .hero h1{font-size:2.25rem;font-weight:900;line-height:1.15;margin-bottom:20px;letter-spacing:-.02em}
+    .hero h1 .highlight{color:var(--lime)}
+    .hero-subtitle{font-size:1.1rem;color:rgba(255,255,255,.88);margin-bottom:32px;max-width:540px;margin-inline:auto;line-height:1.7}
+    .hero-cta{margin-bottom:16px}
+    .hero-reassurance{display:flex;align-items:center;justify-content:center;gap:6px;font-size:.85rem;color:rgba(255,255,255,.65)}
+    .hero-dots{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
+    .hero-dot{
+      width:12px;height:12px;border-radius:50%;
+      background:rgba(255,255,255,.3);border:2px solid rgba(255,255,255,.5);
+      cursor:pointer;transition:background .3s,border-color .3s,box-shadow .3s;
+    }
+    .hero-dot.active{background:var(--lime);border-color:var(--lime);box-shadow:0 0 12px rgba(180,220,2,.5)}
+    .hero-progress{position:absolute;bottom:0;left:0;height:3px;background:var(--lime);z-index:3}
+
+    /* ── SOCIAL PROOF ── */
+    .social-proof{background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:32px 0;overflow:hidden}
+    .social-proof-inner{text-align:center}
+    .logos-track-wrapper{
+      position:relative;overflow:hidden;margin-bottom:20px;
+      mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+      -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+    }
+    @media(prefers-reduced-motion:no-preference){
+      .logos-track{animation:scrollLogos 35s linear infinite}
+    }
+    .logos-track{display:flex;gap:28px;width:max-content}
+    @keyframes scrollLogos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .logo-item{
+      display:flex;align-items:center;justify-content:center;
+      padding:10px 18px;background:#fff;
+      border:1px solid var(--gray-200);border-radius:10px;
+      height:60px;min-width:130px;flex-shrink:0;
+      transition:border-color .3s,transform .3s;
+    }
+    .logo-item:hover{border-color:var(--blue);transform:translateY(-2px)}
+    .hotel-logo{display:flex;flex-direction:column;align-items:center;line-height:1.1}
+    .hotel-logo .logo-name{font-weight:800;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-700)}
+    .hotel-logo .logo-sub{font-weight:500;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);margin-top:2px}
+    .hotel-logo .logo-icon{font-size:1rem;margin-bottom:2px}
+    .social-proof-text{font-size:1rem;color:var(--gray-600);font-weight:500}
+    .social-proof-text strong{color:var(--blue);font-weight:700}
+
+    /* ── SECTION COMMONS ── */
+    .section-header{text-align:center;margin-bottom:56px}
+    .section-label{
+      display:inline-block;background:rgba(0,119,182,.08);color:var(--blue);
+      font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      padding:6px 14px;border-radius:50px;margin-bottom:16px;
+    }
+    .section-title{font-size:2rem;font-weight:800;color:var(--gray-900);line-height:1.2;margin-bottom:12px}
+    .section-subtitle{font-size:1.05rem;color:var(--gray-500);max-width:520px;margin-inline:auto}
+
+    /* ── STEPS ── */
+    .steps{padding:80px 0;background:#fff}
+    .steps-container{position:relative}
+    .timeline-line{display:none}
+    .steps-row{display:grid;grid-template-columns:1fr;gap:24px}
+    .step-arrow{display:flex;justify-content:center;color:var(--gray-300)}
+
+    /* Carte étape : flex colonne, numéro en haut, icône en bas */
+    .step-card{
+      background:var(--gray-50);border:1px solid var(--gray-200);
+      border-radius:var(--radius-lg);padding:32px 24px;
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+      transition:border-color .3s,box-shadow .3s,transform .3s;
+    }
+    .step-card:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+
+    /* Numéro — en haut */
+    .step-number{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:48px;height:48px;background:var(--blue);color:#fff;
+      font-weight:800;font-size:1.2rem;border-radius:14px;
+      margin-bottom:20px;
+      flex-shrink:0;
+    }
+
+    /* Texte — milieu */
+    .step-body{flex:1;display:flex;flex-direction:column;justify-content:center}
+    .step-card h3{font-size:1.15rem;font-weight:700;color:var(--gray-900);margin-bottom:8px}
+    .step-card p{font-size:.95rem;color:var(--gray-500);line-height:1.6}
+
+    /* Icône — en bas */
+    .step-icon{
+      width:56px;height:56px;
+      color:var(--blue);
+      margin-top:24px;
+      flex-shrink:0;
+    }
+
+    /* ── ADVANTAGES ── */
+    .advantages{padding:80px 0;background:linear-gradient(180deg,var(--gray-50),#fff)}
+    .advantages-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .advantage-card{
+      background:#fff;border:1px solid var(--gray-200);
+      border-radius:var(--radius-lg);padding:28px 24px;
+      display:flex;align-items:flex-start;gap:16px;
+      transition:border-color .3s,box-shadow .3s;
+    }
+    .advantage-card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(0,119,182,.08)}
+    .advantage-icon{
+      flex-shrink:0;width:48px;height:48px;
+      background:rgba(0,119,182,.08);border-radius:var(--radius-sm);
+      display:flex;align-items:center;justify-content:center;color:var(--blue);
+    }
+    .advantage-text h3{font-size:1.05rem;font-weight:700;color:var(--gray-900);margin-bottom:6px}
+    .advantage-text p{font-size:.9rem;color:var(--gray-500);line-height:1.55}
+
+    /* ── PREVIEW ── */
+    .preview-section{padding:80px 0;background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+    .preview-video{
+      max-width:800px;margin-inline:auto;
+      border-radius:var(--radius-lg);overflow:hidden;
+      box-shadow:0 20px 40px rgba(0,0,0,.1);
+      background:#000;aspect-ratio:16/9;
+    }
+    .preview-video video{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* ── STATS ── */
+    .stats{padding:60px 0;background:linear-gradient(165deg,var(--blue-deeper),var(--blue));color:#fff}
+    .stats-grid{display:grid;grid-template-columns:1fr;gap:32px;text-align:center}
+    .stat-number{font-size:2.5rem;font-weight:900;color:var(--lime);line-height:1;margin-bottom:8px}
+    .stat-label{font-size:1rem;color:rgba(255,255,255,.8);font-weight:500}
+    .stat-sub{display:block;font-size:.85rem;color:rgba(255,255,255,.55);margin-top:4px}
+
+    /* ── FINAL CTA ── */
+    .final-cta{padding:80px 0;background:#fff;text-align:center}
+    .final-cta-content{max-width:600px;margin-inline:auto}
+    .final-cta h2{font-size:2rem;font-weight:800;color:var(--gray-900);margin-bottom:16px;line-height:1.2}
+    .final-cta p{font-size:1.05rem;color:var(--gray-500);margin-bottom:36px;line-height:1.7}
+    .final-reassurance{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
+    .reassurance-item{display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--gray-500)}
+    .reassurance-item svg{color:var(--lime)}
+
+    /* ── FOOTER ── */
+    .footer{background:var(--gray-900);color:var(--gray-400);padding:40px 0 32px;text-align:center}
+    .footer-logo{margin-bottom:16px}
+    .footer-logo img{height:36px;width:auto;margin-inline:auto;opacity:.8;transition:opacity .3s}
+    .footer-logo img:hover{opacity:1}
+    .footer-text{font-size:.85rem}
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .animate-in{opacity:0;transform:translateY(30px)}
+    .animate-in.visible{animation:fadeInUp .6s ease forwards}
+    .delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}
+    .delay-4{animation-delay:.4s}.delay-5{animation-delay:.5s}.delay-6{animation-delay:.6s}
+
+    /* ── TABLET (≥640px) ── */
+    @media(min-width:640px){
+      .header-logo img{height:44px}
+      .hero-content{padding:160px 0 100px}
+      .hero h1{font-size:2.75rem}
+      .hero-subtitle{font-size:1.15rem}
+      .steps-row{grid-template-columns:repeat(2,1fr)}
+      .step-arrow{display:none}
+      .advantages-grid{grid-template-columns:repeat(2,1fr)}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat-number{font-size:3rem}
+      .logo-item{min-width:150px;height:64px}
+    }
+
+    /* ── DESKTOP (≥1024px) ── */
+    @media(min-width:1024px){
+      .hero-content{padding:180px 0 120px;max-width:750px}
+      .hero-text{text-align:left}
+      .hero-subtitle{margin-inline:0}
+      .hero-cta,.hero-reassurance{justify-content:flex-start;text-align:left}
+
+      /* Timeline horizontale — positionnée sur les numéros (haut de carte) */
+      .timeline-line{
+        display:block;position:absolute;
+        top:28px; /* centre vertical du step-number (48px/2 = 24px + 4px padding) */
+        left:12.5%;right:12.5%;height:3px;
+        background:linear-gradient(90deg,var(--blue),var(--lime),var(--blue));
+        border-radius:2px;z-index:0;
+      }
+      .timeline-line::before{
+        content:'';position:absolute;top:-6px;left:0;right:0;
+        height:15px;
+        background:linear-gradient(90deg,rgba(0,119,182,.2),rgba(180,220,2,.2),rgba(0,119,182,.2));
+        border-radius:8px;filter:blur(4px);
+      }
+
+      .steps-row{grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1}
+
+      /* Cards desktop transparentes */
+      .step-card{background:transparent;border:none;padding:0 12px}
+      .step-card:hover{background:transparent;box-shadow:none;transform:none}
+
+      /* Numéro desktop — rond, ombre, z-index pour passer sur la ligne */
+      .step-number{
+        width:56px;height:56px;font-size:1.3rem;
+        border-radius:50%;margin-bottom:24px;
+        box-shadow:0 4px 15px rgba(0,119,182,.3);
+        position:relative;z-index:2;
+      }
+      .step-card:hover .step-number{
+        transform:scale(1.1);
+        box-shadow:0 6px 20px rgba(0,119,182,.4);
+        transition:transform .3s,box-shadow .3s;
+      }
+
+      /* Icône desktop — animation hover */
+      .step-card:hover .step-icon{
+        transform:translateY(-4px);
+        transition:transform .3s;
+      }
+
+      .step-arrow{display:none}
+      .advantages-grid{grid-template-columns:repeat(3,1fr)}
+      .stats-grid{gap:40px}
+      .stat-number{font-size:3.5rem}
+      .section-title{font-size:2.25rem}
+      .final-cta h2{font-size:2.5rem}
+      .final-cta .cta-button{font-size:1.25rem;padding:22px 56px}
+      .logos-track{gap:36px}
+      .logo-item{min-width:160px;height:68px;padding:12px 22px}
+      .cta-button{font-size:1.125rem;padding:18px 40px;white-space:nowrap;width:auto}
+    }
+
+    /* ── SMALL MOBILE (<640px) ── */
+    @media(max-width:639px){
+      .cta-button{width:100%;font-size:1rem;padding:16px 20px;white-space:normal;line-height:1.3}
+      .final-cta .cta-button{width:100%;font-size:1.1rem;padding:16px 20px}
+    }
+  </style>
 </head>
 <body>
-    <header class="header" id="mainHeader">
-        <div class="container">
-            <div class="header-inner">
-                <a href="https://coincarriere.com" class="header-logo">
-                    <img src="https://cdn.coincarriere.com/wp-content/uploads/2025/11/1762829178875-w23oav1d4pb.png" alt="CoinCarrière" width="160" height="44" loading="eager">
-                </a>
-                <a href="https://coincarriere.com/login" class="header-login">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-                    Connexion
-                </a>
-            </div>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="hero-slideshow">
-            <div class="hero-slide active">
-                <img src="1.jpg" alt="Jeune femme souriante en hôtellerie et restauration" width="1920" height="1080" fetchpriority="high">
-            </div>
-            <div class="hero-slide">
-                <img src="2.jpg" alt="Serveuse en restauration rapide accueillant les clients" width="1920" height="1080">
-            </div>
-            <div class="hero-slide">
-                <img src="3.jpg" alt="Employées d'étage d'un hôtel en action" width="1920" height="1080">
-            </div>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                        Plateforme Hôtellerie & Restauration au Maroc
-                    </div>
-                    <h1>Votre restaurant manque de personnel qualifié ?<br><span class="highlight">Recevez des profils vérifiés</span></h1>
-                    <p class="hero-subtitle">Recevez des candidats vérifiés et disponibles immédiatement sur la plateforme de matching intelligent au Maroc.</p>
-                    <div class="hero-cta">
-                        <a href="https://coincarriere.com/register?type=company" class="cta-button" onclick="fbq('track', 'Lead');">
-                            Publier votre annonce maintenant
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </a>
-                    </div>
-                    <div class="hero-reassurance">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        Gratuit pour commencer • Sans engagement
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-dots">
-            <span class="hero-dot active" data-slide="0"></span>
-            <span class="hero-dot" data-slide="1"></span>
-            <span class="hero-dot" data-slide="2"></span>
-        </div>
-        <div class="hero-progress" id="heroProgress"></div>
-    </section>
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <div class="header-inner">
+        <a href="https://coincarriere.com" class="header-logo">
+          <img src="https://cdn.coincarriere.com/wp-content/uploads/2025/11/1762829178875-w23oav1d4pb.png"
+               alt="CoinCarrière" width="160" height="44" loading="eager" fetchpriority="high">
+        </a>
+        <a href="https://coincarriere.com/login" class="header-login">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+            <polyline points="10 17 15 12 10 7"/>
+            <line x1="15" y1="12" x2="3" y2="12"/>
+          </svg>
+          Connexion
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <section class="social-proof">
-        <div class="container">
-            <div class="social-proof-inner">
-                <div class="logos-track-wrapper">
-                    <div class="logos-track">
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">La Mamounia</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">⭐</span><span class="logo-name">Royal Mansour</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍽️</span><span class="logo-name">Dar Moha</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Sofitel</span><span class="logo-sub">Casablanca</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🌊</span><span class="logo-name">Le Cabestan</span><span class="logo-sub">Casablanca</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏰</span><span class="logo-name">Four Seasons</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍷</span><span class="logo-name">Al Fassia</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Kenzi Palace</span><span class="logo-sub">Agadir</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🌿</span><span class="logo-name">La Sqala</span><span class="logo-sub">Casablanca</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Mövenpick</span><span class="logo-sub">Tanger</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍴</span><span class="logo-name">Le Riad</span><span class="logo-sub">Fès</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Atlas Hotels</span><span class="logo-sub">Agadir</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">La Mamounia</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">⭐</span><span class="logo-name">Royal Mansour</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍽️</span><span class="logo-name">Dar Moha</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Sofitel</span><span class="logo-sub">Casablanca</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🌊</span><span class="logo-name">Le Cabestan</span><span class="logo-sub">Casablanca</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏰</span><span class="logo-name">Four Seasons</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍷</span><span class="logo-name">Al Fassia</span><span class="logo-sub">Marrakech</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Kenzi Palace</span><span class="logo-sub">Agadir</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🌿</span><span class="logo-name">La Sqala</span><span class="logo-sub">Casablanca</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Mövenpick</span><span class="logo-sub">Tanger</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍴</span><span class="logo-name">Le Riad</span><span class="logo-sub">Fès</span></div></div>
-                        <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Atlas Hotels</span><span class="logo-sub">Agadir</span></div></div>
-                    </div>
-                </div>
-                <p class="social-proof-text"><strong>+335 entreprises</strong> recrutent déjà sur CoinCarrière à Casablanca, Marrakech, Agadir et Tanger</p>
-            </div>
-        </div>
-    </section>
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" aria-label="Section principale">
+    <div class="hero-slideshow" aria-hidden="true">
+      <div class="hero-slide active">
+        <img src="1.jpg" alt="Jeune femme souriante en hôtellerie et restauration" width="1920" height="1080" fetchpriority="high" loading="eager">
+      </div>
+      <div class="hero-slide">
+        <img src="2.jpg" alt="Serveuse en restauration rapide accueillant les clients" width="1920" height="1080" loading="lazy">
+      </div>
+      <div class="hero-slide">
+        <img src="3.jpg" alt="Employées d'étage d'un hôtel en action" width="1920" height="1080" loading="lazy">
+      </div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
-    <section class="steps">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Simple & rapide</span>
-                <h2 class="section-title">4 étapes pour recruter en confiance</h2>
-                <p class="section-subtitle">De la publication à l'embauche, on vous guide à chaque étape.</p>
-            </div>
-            <div class="steps-container">
-                <div class="timeline-line"></div>
-                <div class="steps-row">
-                    <!-- Step 1 -->
-                    <div class="step-card animate-in delay-1">
-                        <div class="step-number">1</div>
-                        <div class="step-icon"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="12" width="40" height="32" rx="4"/><line x1="20" y1="8" x2="20" y2="16"/><line x1="36" y1="8" x2="36" y2="16"/><line x1="8" y1="24" x2="48" y2="24"/><line x1="20" y1="32" x2="36" y2="32"/></svg></div>
-                        <h3>Publiez</h3><p>Créez votre offre saisonnière en quelques clics.</p>
-                    </div>
-                    <!-- Arrow 1 (Mobile only via styles) -->
-                    <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                    
-                    <!-- Step 2 -->
-                    <div class="step-card animate-in delay-2">
-                        <div class="step-number">2</div>
-                        <div class="step-icon"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="16" r="8"/><path d="M14 44c0-8 6-14 14-14s14 6 14 14"/><circle cx="44" cy="20" r="5"/><path d="M44 30c4 0 8 3 8 8"/></svg></div>
-                        <h3>Recevez</h3><p>Accédez aux profils qualifiés qui correspondent à vos critères.</p>
-                    </div>
-                    <!-- Arrow 2 (Mobile only via styles) -->
-                    <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                    
-                    <!-- Step 3 -->
-                    <div class="step-card animate-in delay-3">
-                        <div class="step-number">3</div>
-                        <div class="step-icon"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="44" height="40" rx="4"/><polyline points="20,24 26,30 36,20"/></svg></div>
-                        <h3>Évaluez</h3><p>Gérez vos candidats via un pipeline visuel simple.</p>
-                    </div>
-                    <!-- Arrow 3 (Mobile only via styles) -->
-                    <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                    
-                    <!-- Step 4 -->
-                    <div class="step-card animate-in delay-4">
-                        <div class="step-number">4</div>
-                        <div class="step-icon"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M28 8L12 20v28h32V20L28 8z"/><rect x="22" y="32" width="12" height="16"/><polyline points="20,26 28,32 36,26"/></svg></div>
-                        <h3>Embauchez</h3><p>Planifiez vos entretiens et recrutez en toute confiance.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Plateforme Hôtellerie & Restauration au Maroc
+          </div>
+          <h1>Votre restaurant manque de personnel qualifié ?<br>
+            <span class="highlight">Recevez des profils vérifiés</span>
+          </h1>
+          <p class="hero-subtitle">Recevez des candidats vérifiés et disponibles immédiatement sur la plateforme de matching intelligent au Maroc.</p>
+          <div class="hero-cta">
+            <a href="https://coincarriere.com/register?type=company" class="cta-button" id="heroCta">
+              Publier votre annonce maintenant
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <p class="hero-reassurance">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Gratuit pour commencer • Sans engagement
+          </p>
         </div>
-    </section>
-
-    <section class="advantages">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Pourquoi CoinCarrière</span>
-                <h2 class="section-title">Tout ce qu'il vous faut pour recruter sereinement</h2>
-                <p class="section-subtitle">Conçu par des experts du secteur Hôtellerie & Restauration au Maroc.</p>
-            </div>
-            <div class="advantages-grid">
-                <div class="advantage-card animate-in delay-1">
-                    <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-                    <div class="advantage-text"><h3>Candidats Vérifiés</h3><p>Fini les "no-shows" et l'absentéisme. Chaque profil est vérifié avant de vous être présenté.</p></div>
-                </div>
-                <div class="advantage-card animate-in delay-2">
-                    <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-                    <div class="advantage-text"><h3>Matching Intelligent</h3><p>On vous présente uniquement les profils qui matchent vos besoins exacts. Pas de spam, que du pertinent.</p></div>
-                </div>
-                <div class="advantage-card animate-in delay-3">
-                    <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                    <div class="advantage-text"><h3>Gain de Temps</h3><p>Ne perdez plus de temps sur WhatsApp ou le bouche-à-oreille. Centralisez tout sur une seule plateforme.</p></div>
-                </div>
-                <div class="advantage-card animate-in delay-4">
-                    <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-                    <div class="advantage-text"><h3>Pipeline Visuel</h3><p>Suivez chaque candidature d'un coup d'œil. Nouveau, en entretien, retenu — tout est clair.</p></div>
-                </div>
-                <div class="advantage-card animate-in delay-5">
-                    <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                    <div class="advantage-text"><h3>Multi-utilisateurs</h3><p>Partagez les profils avec vos chefs de salle ou de cuisine. Décidez ensemble, recrutez mieux.</p></div>
-                </div>
-                <div class="advantage-card animate-in delay-6">
-                    <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-                    <div class="advantage-text"><h3>Support Dédié</h3><p>Un conseiller expert du secteur vous accompagne. On connaît vos enjeux, on parle votre langage.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREVIEW SECTION — Plateforme CoinCarrière -->
-    <section class="preview-section" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Aperçu de la plateforme</span>
-                <h2 class="section-title">Découvrez l'interface CoinCarrière</h2>
-                <p class="section-subtitle">Une plateforme intuitive conçue pour simplifier votre recrutement dans l'Hôtellerie & Restauration.</p>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: #000; aspect-ratio: 16/9; position: relative;">
-                <video src="video.mp4" controls poster="poster.jpg" style="width: 100%; height: 100%; object-fit: cover;" preload="metadata">
-                    <source src="video.mp4" type="video/mp4">
-                    <source src="video.mov" type="video/quicktime">
-                    <source src="video.webm" type="video/webm">
-                    Votre navigateur ne prend pas en charge la lecture de vidéos.
-                </video>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item animate-in delay-1">
-                    <div class="stat-number">85%</div>
-                    <div class="stat-label">de recrutements réussis</div>
-                    <span class="stat-sub">en moins de 3 jours</span>
-                </div>
-                <div class="stat-item animate-in delay-2">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">coût caché, 0 risque</div>
-                    <span class="stat-sub">Gratuit pour commencer</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <div class="container">
-            <div class="final-cta-content">
-                <span class="section-label">Passez à l'action</span>
-                <h2>Votre prochain recrutement commence aujourd'hui.</h2>
-                <p>Rejoignez les +335 entreprises qui font confiance à CoinCarrière pour leurs recrutements dans l'Hôtellerie & Restauration au Maroc.</p>
-                <a href="https://coincarriere.com/register?type=company" class="cta-button" onclick="trackLead()">
-                    Commencer gratuitement
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-                <div class="final-reassurance">
-                    <div class="reassurance-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gratuit pour commencer</div>
-                    <div class="reassurance-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sans engagement</div>
-                    <div class="reassurance-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Setup en 2 minutes</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <a href="https://coincarriere.com">
-                    <img src="https://cdn.coincarriere.com/wp-content/uploads/2025/11/1762829178875-w23oav1d4pb.png" alt="CoinCarrière" width="140" height="36" loading="lazy">
-                </a>
-            </div>
-            <p class="footer-text" style="margin-bottom: 8px;">&copy; 2025 CoinCarrière. Tous droits réservés.</p>
-            <p class="footer-text" style="font-size: 0.75rem; color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.5;">Nous utilisons des cookies de mesure d'audience (Meta Pixel) pour mesurer la performance de nos campagnes. Vos données sont traitées conformément à la Loi 09-08.</p>
-        </div>
-    </footer>
-    <!-- Cookie Consent Banner -->
-    <div id="cookieBanner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; border-top: 1px solid #e2e8f0; box-shadow: 0 -4px 25px rgba(0,0,0,0.08); z-index: 10000; padding: 20px 0;">
-        <div class="container" style="display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 16px;">
-            <p style="font-size: 0.875rem; color: #475569; margin: 0; line-height: 1.5; flex: 1;">
-                Nous utilisons des cookies de mesure d'audience (Meta Pixel) pour mesurer la performance de nos campagnes. Vos données sont traitées conformément à la Loi 09-08. Vous pouvez accepter ou refuser ces cookies.
-            </p>
-            <div style="display: flex; gap: 12px; flex-shrink: 0; width: 100%; justify-content: flex-end; max-width: 320px;">
-                <button id="refuseCookies" style="flex: 1; font-weight: 600; font-size: 0.875rem; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'">
-                    Refuser
-                </button>
-                <button id="acceptCookies" style="flex: 1; font-weight: 700; font-size: 0.875rem; background: var(--lime); color: var(--gray-900); border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--lime-hover)'" onmouseout="this.style.background='var(--lime)'">
-                    Accepter
-                </button>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <style>
-        @media (min-width: 768px) {
-            #cookieBanner .container {
-                flex-direction: row !important;
-                text-align: left !important;
-            }
-            #cookieBanner div {
-                width: auto !important;
-            }
-        }
-    </style>
-<!---->
-    <script>
-        function trackLead(){if(typeof fbq!=='undefined'){fbq('track','Lead')}}
-        (function(){
-            var slides=document.querySelectorAll('.hero-slide');
-            var dots=document.querySelectorAll('.hero-dot');
-            var bar=document.getElementById('heroProgress');
-            var interval=6e3,current=0,timer,ptimer;
-            function go(n){slides[current].classList.remove('active');dots[current].classList.remove('active');current=n;slides[current].classList.add('active');dots[current].classList.add('active');reset()}
-            function next(){go((current+1)%slides.length)}
-            function reset(){clearInterval(timer);cancelAnimationFrame(ptimer);bar.style.width='0%';var s=Date.now();function anim(){var p=Math.min((Date.now()-s)/interval,1);bar.style.width=(p*100)+'%';if(p<1)ptimer=requestAnimationFrame(anim)}ptimer=requestAnimationFrame(anim);timer=setInterval(next,interval)}
-            dots.forEach(function(d){d.addEventListener('click',function(){go(+this.dataset.slide)})});
-            reset();
-        })();
-        document.addEventListener('DOMContentLoaded',function(){
-            var h=document.getElementById('mainHeader');
-            window.addEventListener('scroll',function(){h.classList.toggle('scrolled',pageYOffset>50)},{passive:true});
-            var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{rootMargin:'0px 0px -50px 0px',threshold:.1});
-            document.querySelectorAll('.animate-in').forEach(function(el){o.observe(el)});
+    <div class="hero-dots" role="tablist" aria-label="Navigation diaporama">
+      <span class="hero-dot active" role="tab" aria-selected="true"  data-slide="0" aria-label="Slide 1"></span>
+      <span class="hero-dot"        role="tab" aria-selected="false" data-slide="1" aria-label="Slide 2"></span>
+      <span class="hero-dot"        role="tab" aria-selected="false" data-slide="2" aria-label="Slide 3"></span>
+    </div>
+    <div class="hero-progress" id="heroProgress" role="progressbar" aria-hidden="true"></div>
+  </section>
 
-            // Cookie banner logic
-            var banner = document.getElementById('cookieBanner');
-            var consent = localStorage.getItem('cookieConsent');
-            if (!consent) {
-                banner.style.display = 'block';
+  <!-- ═══ SOCIAL PROOF ═══ -->
+  <section class="social-proof" aria-label="Entreprises partenaires">
+    <div class="container">
+      <div class="social-proof-inner">
+        <div class="logos-track-wrapper">
+          <div class="logos-track" aria-hidden="true">
+            <!-- Set 1 -->
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">La Mamounia</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">⭐</span><span class="logo-name">Royal Mansour</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍽️</span><span class="logo-name">Dar Moha</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Sofitel</span><span class="logo-sub">Casablanca</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🌊</span><span class="logo-name">Le Cabestan</span><span class="logo-sub">Casablanca</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏰</span><span class="logo-name">Four Seasons</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍷</span><span class="logo-name">Al Fassia</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Kenzi Palace</span><span class="logo-sub">Agadir</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🌿</span><span class="logo-name">La Sqala</span><span class="logo-sub">Casablanca</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Mövenpick</span><span class="logo-sub">Tanger</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍴</span><span class="logo-name">Le Riad</span><span class="logo-sub">Fès</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Atlas Hotels</span><span class="logo-sub">Agadir</span></div></div>
+            <!-- Set 2 (duplicate for seamless loop) -->
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">La Mamounia</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">⭐</span><span class="logo-name">Royal Mansour</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍽️</span><span class="logo-name">Dar Moha</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Sofitel</span><span class="logo-sub">Casablanca</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🌊</span><span class="logo-name">Le Cabestan</span><span class="logo-sub">Casablanca</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏰</span><span class="logo-name">Four Seasons</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍷</span><span class="logo-name">Al Fassia</span><span class="logo-sub">Marrakech</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Kenzi Palace</span><span class="logo-sub">Agadir</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🌿</span><span class="logo-name">La Sqala</span><span class="logo-sub">Casablanca</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Mövenpick</span><span class="logo-sub">Tanger</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🍴</span><span class="logo-name">Le Riad</span><span class="logo-sub">Fès</span></div></div>
+            <div class="logo-item"><div class="hotel-logo"><span class="logo-icon">🏨</span><span class="logo-name">Atlas Hotels</span><span class="logo-sub">Agadir</span></div></div>
+          </div>
+        </div>
+        <p class="social-proof-text"><strong>+335 entreprises</strong> recrutent déjà sur CoinCarrière à Casablanca, Marrakech, Agadir et Tanger</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STEPS ═══ -->
+  <section class="steps">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Simple & rapide</span>
+        <h2 class="section-title">4 étapes pour recruter en confiance</h2>
+        <p class="section-subtitle">De la publication à l'embauche, on vous guide à chaque étape.</p>
+      </div>
+      <div class="steps-container">
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="steps-row">
+
+          <!-- Étape 1 -->
+          <div class="step-card animate-in delay-1">
+            <div class="step-number" aria-hidden="true">1</div>
+            <div class="step-body">
+              <h3>Publiez</h3>
+              <p>Créez votre offre saisonnière en quelques clics.</p>
+            </div>
+            <svg class="step-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="8" y="12" width="40" height="32" rx="4"/><line x1="20" y1="8" x2="20" y2="16"/>
+              <line x1="36" y1="8" x2="36" y2="16"/><line x1="8" y1="24" x2="48" y2="24"/>
+              <line x1="20" y1="32" x2="36" y2="32"/>
+            </svg>
+          </div>
+
+          <div class="step-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+
+          <!-- Étape 2 -->
+          <div class="step-card animate-in delay-2">
+            <div class="step-number" aria-hidden="true">2</div>
+            <div class="step-body">
+              <h3>Recevez</h3>
+              <p>Accédez aux profils qualifiés qui correspondent à vos critères.</p>
+            </div>
+            <svg class="step-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="28" cy="16" r="8"/><path d="M14 44c0-8 6-14 14-14s14 6 14 14"/>
+              <circle cx="44" cy="20" r="5"/><path d="M44 30c4 0 8 3 8 8"/>
+            </svg>
+          </div>
+
+          <div class="step-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+
+          <!-- Étape 3 -->
+          <div class="step-card animate-in delay-3">
+            <div class="step-number" aria-hidden="true">3</div>
+            <div class="step-body">
+              <h3>Évaluez</h3>
+              <p>Gérez vos candidats via un pipeline visuel simple.</p>
+            </div>
+            <svg class="step-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6" y="8" width="44" height="40" rx="4"/><polyline points="20,24 26,30 36,20"/>
+            </svg>
+          </div>
+
+          <div class="step-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+
+          <!-- Étape 4 -->
+          <div class="step-card animate-in delay-4">
+            <div class="step-number" aria-hidden="true">4</div>
+            <div class="step-body">
+              <h3>Embauchez</h3>
+              <p>Planifiez vos entretiens et recrutez en toute confiance.</p>
+            </div>
+            <svg class="step-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M28 8L12 20v28h32V20L28 8z"/>
+              <rect x="22" y="32" width="12" height="16"/>
+              <polyline points="20,26 28,32 36,26"/>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ADVANTAGES ═══ -->
+  <section class="advantages">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Pourquoi CoinCarrière</span>
+        <h2 class="section-title">Tout ce qu'il vous faut pour recruter sereinement</h2>
+        <p class="section-subtitle">Conçu par des experts du secteur Hôtellerie & Restauration au Maroc.</p>
+      </div>
+      <div class="advantages-grid">
+        <div class="advantage-card animate-in delay-1">
+          <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <div class="advantage-text"><h3>Candidats Vérifiés</h3><p>Fini les "no-shows" et l'absentéisme. Chaque profil est vérifié avant de vous être présenté.</p></div>
+        </div>
+        <div class="advantage-card animate-in delay-2">
+          <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="advantage-text"><h3>Matching Intelligent</h3><p>On vous présente uniquement les profils qui matchent vos besoins exacts. Pas de spam, que du pertinent.</p></div>
+        </div>
+        <div class="advantage-card animate-in delay-3">
+          <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="advantage-text"><h3>Gain de Temps</h3><p>Ne perdez plus de temps sur WhatsApp ou le bouche-à-oreille. Centralisez tout sur une seule plateforme.</p></div>
+        </div>
+        <div class="advantage-card animate-in delay-4">
+          <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <div class="advantage-text"><h3>Pipeline Visuel</h3><p>Suivez chaque candidature d'un coup d'œil. Nouveau, en entretien, retenu — tout est clair.</p></div>
+        </div>
+        <div class="advantage-card animate-in delay-5">
+          <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="advantage-text"><h3>Multi-utilisateurs</h3><p>Partagez les profils avec vos chefs de salle ou de cuisine. Décidez ensemble, recrutez mieux.</p></div>
+        </div>
+        <div class="advantage-card animate-in delay-6">
+          <div class="advantage-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="advantage-text"><h3>Support Dédié</h3><p>Un conseiller expert du secteur vous accompagne. On connaît vos enjeux, on parle votre langage.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PREVIEW VIDEO ═══ -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Aperçu de la plateforme</span>
+        <h2 class="section-title">Découvrez l'interface CoinCarrière</h2>
+        <p class="section-subtitle">Une plateforme intuitive conçue pour simplifier votre recrutement dans l'Hôtellerie & Restauration.</p>
+      </div>
+      <div class="preview-video">
+        <video controls poster="poster.jpg" preload="none" aria-label="Présentation de la plateforme CoinCarrière">
+          <source src="video.mp4" type="video/mp4">
+          <source src="video.webm" type="video/webm">
+          Votre navigateur ne prend pas en charge la lecture de vidéos.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS ═══ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item animate-in delay-1">
+          <div class="stat-number">85%</div>
+          <div class="stat-label">de recrutements réussis</div>
+          <span class="stat-sub">en moins de 3 jours</span>
+        </div>
+        <div class="stat-item animate-in delay-2">
+          <div class="stat-number">0</div>
+          <div class="stat-label">coût caché, 0 risque</div>
+          <span class="stat-sub">Gratuit pour commencer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-content">
+        <span class="section-label">Passez à l'action</span>
+        <h2>Votre prochain recrutement commence aujourd'hui.</h2>
+        <p>Rejoignez les +335 entreprises qui font confiance à CoinCarrière pour leurs recrutements dans l'Hôtellerie & Restauration au Maroc.</p>
+        <a href="https://coincarriere.com/register?type=company" class="cta-button" id="finalCta">
+          Commencer gratuitement
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="final-reassurance">
+          <div class="reassurance-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Gratuit pour commencer
+          </div>
+          <div class="reassurance-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Sans engagement
+          </div>
+          <div class="reassurance-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Setup en 2 minutes
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a href="https://coincarriere.com">
+          <img src="https://cdn.coincarriere.com/wp-content/uploads/2025/11/1762829178875-w23oav1d4pb.png"
+               alt="CoinCarrière" width="140" height="36" loading="lazy">
+        </a>
+      </div>
+      <p class="footer-text">&copy; 2025 CoinCarrière. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── Meta Pixel — Lead tracking ── */
+      function trackLead() {
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+      }
+      ['heroCta', 'finalCta'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('click', trackLead);
+      });
+
+      /* ── Header scroll shadow ── */
+      var header = document.getElementById('mainHeader');
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('scrolled', window.pageYOffset > 50);
+      }, { passive: true });
+
+      /* ── Slideshow ── */
+      var slides   = document.querySelectorAll('.hero-slide');
+      var dots     = document.querySelectorAll('.hero-dot');
+      var progress = document.getElementById('heroProgress');
+      var INTERVAL = 6000;
+      var current  = 0;
+      var timer, rafId, startTime;
+
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        dots[current].setAttribute('aria-selected', 'false');
+        current = n;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        dots[current].setAttribute('aria-selected', 'true');
+        resetProgress();
+      }
+
+      function resetProgress() {
+        clearInterval(timer);
+        cancelAnimationFrame(rafId);
+        progress.style.width = '0%';
+        startTime = Date.now();
+        function step() {
+          var p = Math.min((Date.now() - startTime) / INTERVAL, 1);
+          progress.style.width = (p * 100) + '%';
+          if (p < 1) rafId = requestAnimationFrame(step);
+        }
+        rafId = requestAnimationFrame(step);
+        timer = setInterval(function () { goTo((current + 1) % slides.length); }, INTERVAL);
+      }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () { goTo(+this.dataset.slide); });
+      });
+      resetProgress();
+
+      /* ── Intersection Observer — .animate-in ── */
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
             }
-            document.getElementById('acceptCookies').addEventListener('click', function() {
-                localStorage.setItem('cookieConsent', 'accepted');
-                banner.style.display = 'none';
-            });
-            document.getElementById('refuseCookies').addEventListener('click', function() {
-                localStorage.setItem('cookieConsent', 'refused');
-                banner.style.display = 'none';
-            });
-        });
-    </script>
-</body>
+          });
+        }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+        document.querySelectorAll('.animate-in').forEach(function (el) { io.observe(el); });
+      } else {
+        document.querySelectorAll('.animate-in').forEach(function (el) { el.classList.add('visible'); });
+      }
+
+    })();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f51efca2f9fcef8',t:'MTc3NzY3MTU0Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
