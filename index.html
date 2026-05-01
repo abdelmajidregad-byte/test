@@ -8,22 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1527595958901698');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1527595958901698');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{--blue:#0077B6;--blue-dark:#005f8f;--blue-deeper:#004a70;--lime:#b4dc02;--lime-hover:#a2c700;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--gray-700:#334155;--gray-800:#1e293b;--gray-900:#0f172a}
@@ -32,9 +32,44 @@ src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
         img{max-width:100%;height:auto;display:block}
         a{text-decoration:none;color:inherit}
         .container{width:100%;max-width:1140px;margin:0 auto;padding:0 20px}
-        .cta-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--lime);color:var(--gray-900);font-weight:700;font-size:1.125rem;padding:18px 40px;border-radius:12px;border:none;cursor:pointer;transition:all .25s ease;box-shadow:0 4px 15px rgba(180,220,2,.35);white-space:nowrap}
-        .cta-button:hover{background:var(--lime-hover);transform:translateY(-2px);box-shadow:0 8px 25px rgba(180,220,2,.45)}
+        
+        /* CTA responsive styles */
+        .cta-button{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+            background:var(--lime);
+            color:var(--gray-900);
+            font-weight:700;
+            font-size:1.125rem;
+            padding:18px 40px;
+            border-radius:12px;
+            border:none;
+            cursor:pointer;
+            transition:all .25s ease;
+            box-shadow:0 4px 15px rgba(180,220,2,.35);
+            white-space:nowrap;
+            text-align:center;
+            max-width:100%;
+        }
+        .cta-button:hover{
+            background:var(--lime-hover);
+            transform:translateY(-2px);
+            box-shadow:0 8px 25px rgba(180,220,2,.45);
+        }
         .cta-button svg{flex-shrink:0}
+        
+        @media(max-width: 640px) {
+            .cta-button {
+                width: 100%;
+                font-size: 1rem;
+                padding: 16px 20px;
+                white-space: normal;
+                line-height: 1.3;
+            }
+        }
+
         .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 0;transition:all .3s ease;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.06)}
         .header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
         .header-inner{display:flex;align-items:center;justify-content:space-between}
@@ -108,6 +143,7 @@ src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
         .final-cta h2{font-size:2rem;font-weight:800;color:var(--gray-900);margin-bottom:16px;line-height:1.2}
         .final-cta p{font-size:1.05rem;color:var(--gray-500);margin-bottom:36px;line-height:1.7}
         .final-cta .cta-button{font-size:1.2rem;padding:20px 48px}
+        @media(max-width:640px){.final-cta .cta-button{font-size:1.1rem;padding:16px 20px;width:100%}}
         .final-reassurance{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
         .reassurance-item{display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--gray-500)}
         .reassurance-item svg{color:var(--lime)}
@@ -141,13 +177,13 @@ src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
     <section class="hero">
         <div class="hero-slideshow">
             <div class="hero-slide active">
-                <img src="https://metiers-hotel-resto.fr/wp-content/uploads/slider/cache/39b0e10309b3bd7503bacca97ae436c5/iStock-506826870-2.jpg" alt="Jeune femme souriante en hôtellerie et restauration" width="1920" height="1080" fetchpriority="high">
+                <img src="1.jpg" alt="Jeune femme souriante en hôtellerie et restauration" width="1920" height="1080" fetchpriority="high">
             </div>
             <div class="hero-slide">
-                <img src="https://metiers-hotel-resto.fr/wp-content/uploads/slider/cache/7abd4df7473266fafd43b96f9d16bc71/slider_restaurations-3.webp" alt="Serveuse en restauration rapide accueillant les clients" width="1920" height="1080">
+                <img src="2.jpg" alt="Serveuse en restauration rapide accueillant les clients" width="1920" height="1080">
             </div>
             <div class="hero-slide">
-                <img src="https://metiers-hotel-resto.fr/wp-content/uploads/slider/cache/0448602ae3df25153c4d8e1cc2b29657/AdobeStock_464132199-1-scaled.jpg" alt="Employées d'étage d'un hôtel en action" width="1920" height="1080">
+                <img src="3.jpg" alt="Employées d'étage d'un hôtel en action" width="1920" height="1080">
             </div>
         </div>
         <div class="hero-overlay"></div>
@@ -156,9 +192,9 @@ src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
                 <div class="hero-text">
                     <div class="hero-badge">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                        Plateforme #1 au Maroc
+                        Plateforme Hôtellerie & Restauration au Maroc
                     </div>
-                    <h1>Trouvez <span class="highlight">le talent</span> qu'il vous faut</h1>
+                    <h1>Votre restaurant manque de personnel qualifié ?<br><span class="highlight">Recevez des profils vérifiés</span></h1>
                     <p class="hero-subtitle">Recevez des candidats vérifiés et disponibles immédiatement sur la plateforme de matching intelligent au Maroc.</p>
                     <div class="hero-cta">
                         <a href="https://coincarriere.com/register?type=company" class="cta-button" onclick="fbq('track', 'Lead');">
@@ -227,24 +263,34 @@ src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
             <div class="steps-container">
                 <div class="timeline-line"></div>
                 <div class="steps-row">
+                    <!-- Step 1 -->
                     <div class="step-card animate-in delay-1">
                         <div class="step-number">1</div>
                         <div class="step-icon"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="12" width="40" height="32" rx="4"/><line x1="20" y1="8" x2="20" y2="16"/><line x1="36" y1="8" x2="36" y2="16"/><line x1="8" y1="24" x2="48" y2="24"/><line x1="20" y1="32" x2="36" y2="32"/></svg></div>
                         <h3>Publiez</h3><p>Créez votre offre saisonnière en quelques clics.</p>
                     </div>
+                    <!-- Arrow 1 (Mobile only via styles) -->
                     <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+                    
+                    <!-- Step 2 -->
                     <div class="step-card animate-in delay-2">
                         <div class="step-number">2</div>
                         <div class="step-icon"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="16" r="8"/><path d="M14 44c0-8 6-14 14-14s14 6 14 14"/><circle cx="44" cy="20" r="5"/><path d="M44 30c4 0 8 3 8 8"/></svg></div>
                         <h3>Recevez</h3><p>Accédez aux profils qualifiés qui correspondent à vos critères.</p>
                     </div>
+                    <!-- Arrow 2 (Mobile only via styles) -->
                     <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+                    
+                    <!-- Step 3 -->
                     <div class="step-card animate-in delay-3">
                         <div class="step-number">3</div>
                         <div class="step-icon"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="44" height="40" rx="4"/><polyline points="20,24 26,30 36,20"/></svg></div>
                         <h3>Évaluez</h3><p>Gérez vos candidats via un pipeline visuel simple.</p>
                     </div>
+                    <!-- Arrow 3 (Mobile only via styles) -->
                     <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+                    
+                    <!-- Step 4 -->
                     <div class="step-card animate-in delay-4">
                         <div class="step-number">4</div>
                         <div class="step-icon"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M28 8L12 20v28h32V20L28 8z"/><rect x="22" y="32" width="12" height="16"/><polyline points="20,26 28,32 36,26"/></svg></div>
@@ -292,15 +338,20 @@ src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
     </section>
 
     <!-- PREVIEW SECTION — Plateforme CoinCarrière -->
-    <section class="preview-section">
+    <section class="preview-section" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Aperçu de la plateforme</span>
                 <h2 class="section-title">Découvrez l'interface CoinCarrière</h2>
                 <p class="section-subtitle">Une plateforme intuitive conçue pour simplifier votre recrutement dans l'Hôtellerie & Restauration.</p>
             </div>
-            <div class="preview-wrapper">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=280&q=80" alt="Interface de la plateforme CoinCarrière — Dashboard de recrutement" width="280" height="187" loading="lazy">
+            <div style="max-width: 800px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: #000; aspect-ratio: 16/9; position: relative;">
+                <video src="video.mp4" controls poster="poster.jpg" style="width: 100%; height: 100%; object-fit: cover;" preload="metadata">
+                    <source src="video.mp4" type="video/mp4">
+                    <source src="video.mov" type="video/quicktime">
+                    <source src="video.webm" type="video/webm">
+                    Votre navigateur ne prend pas en charge la lecture de vidéos.
+                </video>
             </div>
         </div>
     </section>
@@ -348,9 +399,38 @@ src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
                     <img src="https://cdn.coincarriere.com/wp-content/uploads/2025/11/1762829178875-w23oav1d4pb.png" alt="CoinCarrière" width="140" height="36" loading="lazy">
                 </a>
             </div>
-            <p class="footer-text">&copy; 2025 CoinCarrière. Tous droits réservés.</p>
+            <p class="footer-text" style="margin-bottom: 8px;">&copy; 2025 CoinCarrière. Tous droits réservés.</p>
+            <p class="footer-text" style="font-size: 0.75rem; color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.5;">Nous utilisons des cookies de mesure d'audience (Meta Pixel) pour mesurer la performance de nos campagnes. Vos données sont traitées conformément à la Loi 09-08.</p>
         </div>
     </footer>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; border-top: 1px solid #e2e8f0; box-shadow: 0 -4px 25px rgba(0,0,0,0.08); z-index: 10000; padding: 20px 0;">
+        <div class="container" style="display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 16px;">
+            <p style="font-size: 0.875rem; color: #475569; margin: 0; line-height: 1.5; flex: 1;">
+                Nous utilisons des cookies de mesure d'audience (Meta Pixel) pour mesurer la performance de nos campagnes. Vos données sont traitées conformément à la Loi 09-08. Vous pouvez accepter ou refuser ces cookies.
+            </p>
+            <div style="display: flex; gap: 12px; flex-shrink: 0; width: 100%; justify-content: flex-end; max-width: 320px;">
+                <button id="refuseCookies" style="flex: 1; font-weight: 600; font-size: 0.875rem; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'">
+                    Refuser
+                </button>
+                <button id="acceptCookies" style="flex: 1; font-weight: 700; font-size: 0.875rem; background: var(--lime); color: var(--gray-900); border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--lime-hover)'" onmouseout="this.style.background='var(--lime)'">
+                    Accepter
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @media (min-width: 768px) {
+            #cookieBanner .container {
+                flex-direction: row !important;
+                text-align: left !important;
+            }
+            #cookieBanner div {
+                width: auto !important;
+            }
+        }
+    </style>
 
     <script>
         function trackLead(){if(typeof fbq!=='undefined'){fbq('track','Lead')}}
@@ -370,7 +450,22 @@ src="https://www.facebook.com/tr?id=1527595958901698&ev=PageView&noscript=1"
             window.addEventListener('scroll',function(){h.classList.toggle('scrolled',pageYOffset>50)},{passive:true});
             var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{rootMargin:'0px 0px -50px 0px',threshold:.1});
             document.querySelectorAll('.animate-in').forEach(function(el){o.observe(el)});
+
+            // Cookie banner logic
+            var banner = document.getElementById('cookieBanner');
+            var consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                banner.style.display = 'block';
+            }
+            document.getElementById('acceptCookies').addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+            });
+            document.getElementById('refuseCookies').addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'refused');
+                banner.style.display = 'none';
+            });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f495cb1d8a8eeea',t:'MTc3NzU4MTYzMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
